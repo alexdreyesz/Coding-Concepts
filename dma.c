@@ -45,8 +45,20 @@ int** dma_2d_array() {
 } 
 
 // DMA For An Array Of Arrays
-void dma_array_of_arrays() {
+node** dma_array_of_arrays() {
+    node** array_of_arrays = (node**)malloc( 5 * sizeof(node*));
 
+    for(int i = 0; i < 5; i++){
+        array_of_arrays[i] = (node*)malloc(5 * sizeof(node));
+    }
+
+    for(int i = 0; i < 5; i++) {
+        for(int j = 0; j < 5; j++) {
+            array_of_arrays[i][j].data = i * j;
+        }
+    }
+
+    return array_of_arrays;
 } 
 
 int main() {
@@ -64,8 +76,8 @@ int main() {
 
     printf("\n");
 
-    // DMA For An Array Of Arrays
-    printf("DMA For An Array Of Arrays\n");
+    // DMA For A 2D Array
+    printf("DMA For A 2D Array\n");
     int** array_2d = dma_2d_array();
 
     for (int i = 0; i < 5; i++) {
@@ -78,5 +90,16 @@ int main() {
 
     printf("\n");
 
+    // DMA For An Array Of Arrays
+    printf("DMA For An Array Of Arrays\n");
+    node** array_of_arrays = dma_array_of_arrays();
+
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 5; j++) {
+            printf("%d, ", array_of_arrays[i][j].data);
+        }
+
+        printf("\n");
+    }
     return 0;
 }
