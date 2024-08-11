@@ -1,11 +1,29 @@
 #include <stdio.h>
 
+// Insert Sort
 void insert_sort(int array[], int size) {
+    // Temporary Value
+    int temporary = 0;
 
+    // Traverse Array
+    for(int i = 1; i < size; i++) {
+        // Get Temporary Value
+        temporary = array[i];
+        
+        // Compare Values To The Left
+        for(int j = i - 1; j >= 0; j--) {
+            // If Temporary Is Less Than Current Number Move Right Else Break
+            if(temporary < array[j]) {
+                array[j + 1] = array[j];
+                array[j] = temporary;
+            } else {
+                break;
+            }
+        }
+    }
 }
 
 int main() {
-
     int array[10] = {3,1,4,7,2,5,8,9,6,10};
     int size = 10;
 
