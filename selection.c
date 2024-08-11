@@ -27,7 +27,7 @@ int main() {
     int array[10] = {3,1,4,7,2,5,8,9,6,10};
     int size = 10;
 
-    // Print Not In Order Array
+    // Print Unsorted Array
     for(int i = 0; i < size; i++) {
         if(i != size - 1) {
             printf("%d, ", array[i]);
@@ -40,7 +40,7 @@ int main() {
     // Sort The Array With Selection Sort
     selection_sort(array, size);
 
-    // Print Not In Order Array
+    // Print Sorted Array
     for(int i = 0; i < size; i++) {
         if( i != size - 1) {
             printf("%d, ", array[i]);
