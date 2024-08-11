@@ -1,7 +1,22 @@
 #include <stdio.h>
 
+// Bubble Sort
 void bubble_sort(int array[], int size) {
-    
+    // Temporary Value
+    int temporary = 0;
+
+    // Traverse Array
+    for(int i = 0; i < size; i++) {
+        // Compare Adjecent Values 
+        for(int j = 1; j < size; j++) {
+            // If Current Value Is Greather Than Previous Value Swap
+            if(array[j - 1] > array[j]) {
+                temporary = array[j - 1];
+                array[j - 1] = array[j];
+                array[j] = temporary;
+            }
+        }
+    }
 }
 
 int main() {
