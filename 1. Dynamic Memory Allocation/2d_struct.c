@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define NAMESIZE 15
+#define NAMESIZE 20
 #define STUDENTAMOUNT 5
 
 typedef struct Student {
@@ -14,7 +14,7 @@ typedef struct Student {
 int main() {
     Student **students = (Student**)malloc(STUDENTAMOUNT * sizeof(Student*));
 
-    char names[STUDENTAMOUNT][NAMESIZE] = {"Miguel", "Mario", "William", "Rodrigo", "Sergio"};
+    char names[STUDENTAMOUNT][NAMESIZE] = {"Miguel Newvilage", "Mario Montana", "William Williams", "Rodrigo Caceres", "Sergio Gonzales"};
 
     for (int i = 0; i < STUDENTAMOUNT; i++) {
         students[i] = (Student*)malloc(sizeof(Student));
